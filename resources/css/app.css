@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 @import 'tailwindcss';
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
@@ -5,7 +6,40 @@
 @source '../**/*.blade.php';
 @source '../**/*.js';
 
-@theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+:root {
+    --bg-color: #fafaf8;
+    --text-color: #1a1a1a;
+    --muted-text: #6b7268;
+    --deep-forest: #1b4332;
+    --mid-forest: #2d6a4f;
+    --gold-accent: #d4a853;
+    --warm-amber: #f4a261;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'DM Sans', sans-serif;
 }
+
+[data-theme="dark"] {
+    --bg-color: #0d1410;
+    --text-color: #f0ede4;
+    --muted-text: #8a9a8c;
+}
+
+@theme {
+    --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+    --font-serif: var(--font-heading), Georgia, serif;
+    --color-bg-content: var(--bg-color);
+    --color-text-content: var(--text-color);
+    --color-muted-content: var(--muted-text);
+    --color-deep-forest: var(--deep-forest);
+    --color-mid-forest: var(--mid-forest);
+    --color-gold-accent: var(--gold-accent);
+    --color-warm-amber: var(--warm-amber);
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
